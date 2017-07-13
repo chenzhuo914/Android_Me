@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
             }
 
             Bundle bundle = new Bundle();
-            bundle.putInt("headIndex", headIndex);
-            bundle.putInt("bodyIndex", bodyIndex);
-            bundle.putInt("legIndex", legIndex);
+            bundle.putInt(getResources().getString(R.string.intent_head_index), headIndex);
+            bundle.putInt(getResources().getString(R.string.intent_body_index), bodyIndex);
+            bundle.putInt(getResources().getString(R.string.intent_leg_index), legIndex);
 
             final Intent intent = new Intent(this, AndroidMeActivity.class);
             intent.putExtras(bundle);

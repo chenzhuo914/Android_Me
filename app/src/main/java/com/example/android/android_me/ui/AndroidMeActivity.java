@@ -35,9 +35,9 @@ public class AndroidMeActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             // Get the list index values that were sent through intent.
             Intent intent = getIntent();
-            int headIndex = intent.getIntExtra("headIndex", 0);
-            int bodyIndex = intent.getIntExtra("bodyIndex", 0);
-            int legIndex = intent.getIntExtra("legIndex", 0);
+            int headIndex = intent.getIntExtra(getResources().getString(R.string.intent_head_index), 0);
+            int bodyIndex = intent.getIntExtra(getResources().getString(R.string.intent_body_index), 0);
+            int legIndex = intent.getIntExtra(getResources().getString(R.string.intent_leg_index), 0);
 
             // Create a new head BodyPartFragment
             BodyPartFragment headFragment = new BodyPartFragment();
