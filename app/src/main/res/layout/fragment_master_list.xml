@@ -25,6 +25,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:text="Next" />
+        android:text="Next"
+        android:onClick="nextButtonClicked"/>
 
 </LinearLayout>

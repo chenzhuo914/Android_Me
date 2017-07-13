@@ -56,15 +56,6 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                         .add(R.id.leg_container, legFragment)
                         .commit();
             }
-        } else {
-            final Intent intent = new Intent(this, AndroidMeActivity.class);
-            Button nextButton = (Button) findViewById(R.id.next_button);
-            nextButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(intent);
-                }
-            });
         }
     }
 
@@ -111,7 +102,11 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 default:
                     break;
             }
+        }
+    }
 
+    public void nextButtonClicked(View v) {
+        if (v.getId() == R.id.next_button) {
             Bundle bundle = new Bundle();
             bundle.putInt(getResources().getString(R.string.intent_head_index), headIndex);
             bundle.putInt(getResources().getString(R.string.intent_body_index), bodyIndex);
@@ -120,13 +115,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
             final Intent intent = new Intent(this, AndroidMeActivity.class);
             intent.putExtras(bundle);
 
-            Button nextButton = (Button) findViewById(R.id.next_button);
-            nextButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(intent);
-                }
-            });
+            startActivity(intent);
         }
     }
 }
